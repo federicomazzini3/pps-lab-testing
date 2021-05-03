@@ -27,6 +27,8 @@ lazy val root = (project in file("."))
     Test / parallelExecution := false
   )
 
+coverageEnabled := true
+
 // Cucumber configuration
 // Run by:  sbt> cucumber
 enablePlugins(CucumberPlugin)
