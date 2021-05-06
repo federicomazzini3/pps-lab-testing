@@ -1,9 +1,10 @@
-package testLab
+package testLab.ex3
 
-import org.junit.Assert.{assertFalse}
+import org.junit.Assert.assertFalse
 import org.junit.runner.RunWith
-import org.scalatest.{FunSuite, Matchers}
 import org.scalatest.junit.JUnitRunner
+import org.scalatest.{FunSuite, Matchers}
+import testLab._
 
 @RunWith(classOf[JUnitRunner])
 class CartTestFunSuite extends FunSuite with Matchers {
@@ -79,15 +80,6 @@ class WareHouseFunSuite extends FunSuite with Matchers {
       warehouse.supply(p1, qty)
 
       assert(warehouse.get(p1, qty) == (p1,qty))
-    }
-
-    test("Warehouse shouldn't return a quantity of the product asked if there's isn't enough"){
-      val warehouse = new BasicWarehouse
-      val p1 = Product("Shoes")
-      val qty = 10
-      warehouse.supply(p1, qty)
-
-      assertFalse(warehouse.get(p1,qty + 1) == (p1, qty + 1))
     }
 
   test("Warehouse should return the max quantity of the product asked if asked quantity is > than available quantity"){
